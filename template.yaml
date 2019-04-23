@@ -70,11 +70,11 @@ Resources:
       UserPoolId: !Ref UserPool
   Api:
     Type: AWS::Serverless::Api
-    Properties: null
-    Auth:
-      Authorizers:
-        WildRydes:
-          UserPoolArn: !GetAtt UserPool.Arn
+    Properties:
+      Auth:
+        Authorizers:
+          WildRydes:
+            UserPoolArn: !GetAtt UserPool.Arn
       Name: !Sub
         - ${ResourceName} From Stack ${StackTagName} Environment ${EnvironmentTagName}
         - ResourceName: Api
